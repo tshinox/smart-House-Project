@@ -1,10 +1,10 @@
 ﻿@page "/OwnersHub"
 
 <div class="policy-data">
-    <RadzenCard Style="--rz-card-background-color:navy;color:white;" class="py-2">
+    <RadzenCard Style="--rz-card-background-color:green;color:white;" class="py-2">
         <RadzenRow>
             <div class="col-sm-3 text-center">
-                Policy Details
+                House Details
             </div>
             <div class="col-sm-6 text-center">
                 Owner Details
@@ -21,41 +21,28 @@
                     <div class="col-3">
                         <div class="row col-12">
                             <RadzenStack Gap="1rem" class="rz-p-sm-4 text-black">
-                                <RadzenFormField Text="Master Contract">
+                                <RadzenFormField Text="House Location">
                                     <RadzenTextBox Disabled="true" />
                                 </RadzenFormField>
-                                <RadzenFormField Text="Legacy Policy Number">
+                                <RadzenFormField Text="House Number">
                                     <RadzenTextBox Disabled="true" />
                                 </RadzenFormField>
-                                <RadzenFormField Text="Entity Number">
+                                <RadzenFormField Text="Number of Occupant">
                                     <RadzenNumeric ShowUpDown="false" Disabled="true" TValue="int" />
                                 </RadzenFormField>
-                                <RadzenFormField Text="Annual Increase">
-                                    <RadzenNumeric ShowUpDown="false" Disabled="true" TValue="decimal?" />
+                                <RadzenFormField Text="Date Bought">
                                 </RadzenFormField>
-                                <RadzenFormField Text="Date of Commencement">
+                                <RadzenFormField Text="Is Insured">
                                 </RadzenFormField>
-                                <RadzenFormField Text="Reinstatement Date of Commencement">
+                                <RadzenFormField Text="Is Paid Off">
                                 </RadzenFormField>
-                                <RadzenFormField Text="Lapsed Date">
-                                </RadzenFormField>
-                                <RadzenFormField Text="Cancelled Date">
+                                <RadzenFormField Text="Security Info">
                                 </RadzenFormField>
                                 <RadzenFormField Text="Sales Venue">
                                     <RadzenTextBox Disabled="true" />
                                 </RadzenFormField>
                                 <RadzenFormField Text="Sales Person">
                                     <RadzenTextBox Disabled="true" />
-                                </RadzenFormField>
-                                <RadzenFormField Text="Campaign Code">
-                                    <RadzenNumeric ShowUpDown="false" Disabled="true" TValue="int" />
-                                </RadzenFormField>
-                                <RadzenFormField Text="Policy Fee">
-                                    <RadzenNumeric ShowUpDown="false" Disabled="true" TValue="int" />
-                                </RadzenFormField>
-                                <RadzenFormField Text="Capture Date">
-                                </RadzenFormField>
-                                <RadzenFormField Text="Prefferred Communication Method">
                                 </RadzenFormField>
                             </RadzenStack>
                         </div>
@@ -71,6 +58,8 @@
                                     </Helper>
                                 </RadzenFormField>
                             </RadzenStack>
+                        </div>
+                        <div class="row col-12">
                             <RadzenStack Gap="10px" class="text-black col-sm-6 mt-3">
                                 <RadzenFormField Text="First Name" class="@(true ? "required-inner-label" : "")">
                                     <ChildContent>
@@ -81,8 +70,6 @@
                                     </Helper>
                                 </RadzenFormField>
                             </RadzenStack>
-                        </div>
-                        <div class="row col-12">
                             <RadzenStack Gap="10px" class="text-black col-sm-6 mt-3">
                                 <RadzenFormField Text="Surname" class="@(true ? "required-inner-label" : "")">
                                     <ChildContent>
@@ -93,32 +80,18 @@
                                     </Helper>
                                 </RadzenFormField>
                             </RadzenStack>
-                            <RadzenStack Gap="10px" class="text-black col-sm-6 mt-3">
-                                <RadzenFormField class="@(true ? "required" : "")" Text="Legal Reference Number Type">
-                                    <ChildContent>
-                                    </ChildContent>
-                                </RadzenFormField>
-                            </RadzenStack>
                         </div>
                         <div class="row col-12">
                             <RadzenStack Gap="10px" class="text-black col-sm-6 mt-3">
-                                <RadzenFormField Text="Date of Birth" class="@(true ? "required-inner-label" : "")">
+                                <RadzenFormField Text="ID Number" class="@(true ? "required-inner-label" : "")">
                                     <ChildContent>
+                                        <RadzenTextBox MaxLength=13 Name="LegalRefNo" Disabled="true" />
                                     </ChildContent>
                                 </RadzenFormField>
                             </RadzenStack>
                             <RadzenStack Gap="10px" class="text-black col-sm-6 mt-3">
-                                <RadzenFormField Text="Legal Reference Number" class="@(true ? "required-inner-label" : "")">
+                                <RadzenFormField Text="Date of Birth" class="@(true ? "required-inner-label" : "")">
                                     <ChildContent>
-                                        @if (true)
-                                        {
-                                            <RadzenTextBox MaxLength=13 Name="LegalRefNo" Disabled="true" />
-
-                                        }
-                                        else
-                                        {
-                                            <RadzenTextBox Trim Name="LegalRefNo" Disabled="true" />
-                                        }
                                     </ChildContent>
                                 </RadzenFormField>
                             </RadzenStack>
@@ -126,7 +99,7 @@
 
                         <div class="row col-12">
                             <RadzenStack Gap="5px" class="text-black col-sm-6 mt-3">
-                                <RadzenFormField Text="Fax number" class="@(true ? "required-inner-label" : "")">
+                                <RadzenFormField Text="Fax number">
                                     <ChildContent>
                                         <RadzenTextBox MaxLength=10 Name="FaxNumber"  />
                                     </ChildContent>
@@ -136,7 +109,7 @@
                                 </RadzenFormField>
                             </RadzenStack>
                             <RadzenStack Gap="5px" class="text-black col-sm-6 mt-3">
-                                <RadzenFormField Text="Home number" class="@(true ? "required-inner-label" : "")">
+                                <RadzenFormField Text="Home number">
                                     <ChildContent>
                                         <RadzenTextBox MaxLength=10 Name="HomeNumber"  />
                                     </ChildContent>
@@ -149,6 +122,16 @@
 
                         <div class="row col-12">
                             <RadzenStack Gap="5px" class="text-black col-sm-6 mt-3">
+                                <RadzenFormField Text="Cell Number" class="@(true ? "required-inner-label" : "")">
+                                    <ChildContent>
+                                        <RadzenTextBox MaxLength=10 Name="CellNumber" />
+                                    </ChildContent>
+                                    <Helper>
+                                        <RadzenRegexValidator Component="CellNumber" Text="Cell Number invalid" Pattern="^[x0-9_.-]{10}$" Popup=@true Style="position: absolute ;" />
+                                    </Helper>
+                                </RadzenFormField>
+                            </RadzenStack>
+                            <RadzenStack Gap="5px" class="text-black col-sm-6 mt-3">
                                 <RadzenFormField Text="Email Address" class="@(true ? "required-inner-label" : "")">
                                     <ChildContent>
                                         <RadzenTextBox Trim Name="Email" />
@@ -159,16 +142,6 @@
                                         {
                                             <RadzenRequiredValidator Component="Email" Text="Email address is required" Popup=true Style="position: absolute;" />
                                         }
-                                    </Helper>
-                                </RadzenFormField>
-                            </RadzenStack>
-                            <RadzenStack Gap="5px" class="text-black col-sm-6 mt-3">
-                                <RadzenFormField Text="Cell Number" class="@(true ? "required-inner-label" : "")">
-                                    <ChildContent>
-                                        <RadzenTextBox MaxLength=10 Name="CellNumber" />
-                                    </ChildContent>
-                                    <Helper>
-                                        <RadzenRegexValidator Component="CellNumber" Text="Cell Number invalid" Pattern="^[x0-9_.-]{10}$" Popup=@true Style="position: absolute ;" />
                                     </Helper>
                                 </RadzenFormField>
                             </RadzenStack>
@@ -191,7 +164,6 @@
                             <div class="col-sm-6">
                                 <RadzenFormField Text="Address 1">
                                     <RadzenTextBox Trim Name="PostalAddress1"  />
-
                                 </RadzenFormField>
                             </div>
                         </div>
@@ -230,7 +202,6 @@
                             <div class="col-sm-6">
                                 <RadzenFormField Text="City/Town">
                                     <RadzenTextBox Trim Name="PostalTownCity" />
-
                                 </RadzenFormField>
                             </div>
                         </div>
@@ -266,21 +237,15 @@
                                     </ChildContent>
                                 </RadzenFormField>
                             </div>
-                            <div class="col-sm-6">
-                                <RadzenFormField Text="Smoker">
-                                    <ChildContent>
-                                    </ChildContent>
-                                </RadzenFormField>
-                            </div>
                         </div>
                     </div>
                     <div class="col-3">
                         <RadzenStack Gap="1rem" class="rz-p-sm-4 text-black col-sm-12">
-                            <RadzenFormField Text="Last Billing Date">
+                            <RadzenFormField Text="Billing Date">
                                 <ChildContent>
                                 </ChildContent>
                             </RadzenFormField>
-                            <RadzenFormField Text="Last Paid Date">
+                        <RadzenFormField Text="Last Billing Date">
                                 <ChildContent>
                                 </ChildContent>
                             </RadzenFormField>
@@ -288,7 +253,7 @@
                                 <ChildContent>
                                 </ChildContent>
                             </RadzenFormField>
-                            <RadzenFormField Text="Policy Premium Amount">
+                            <RadzenFormField Text="Premium Amount">
                                 <ChildContent>
                                     <RadzenNumeric ShowUpDown="false" Disabled="@true" TValue="decimal?" />
                                 </ChildContent>
